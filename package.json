@@ -2,7 +2,7 @@
   "name": "hplaststand",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://russellsoppe.github.io/hp-last-stand",
+  "homepage" : "https://russellsoppe.github.io/hp-last-stand",
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
