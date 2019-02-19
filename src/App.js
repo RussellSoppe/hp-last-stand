@@ -258,8 +258,12 @@ onStartNewGame = ()=>{
           </div>  
 
 
-        
+          <div id="endcredits">
+              <span>This website was created by Russell Soppe and his "little dev team". <a href="www.russellsoppe.com">www.russellsoppe.com</a></span>
+          </div>
+
         </header>
+
       </div>
     );
   }

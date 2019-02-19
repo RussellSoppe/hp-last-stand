@@ -136,3 +136,11 @@ button[disabled]{
   display: flex;
   flex-direction: row;
 }
+
+#endcredits{
+  font-size: 8px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: white;
+}
