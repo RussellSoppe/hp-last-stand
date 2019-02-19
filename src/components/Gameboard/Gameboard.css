@@ -1,0 +1,277 @@
+
+@font-face {
+	font-family: harrypotter;
+	src: './fonts/Kids%20Stuff/hplaststand/src/fonts/HARRYP__.TTF';
+}
+
+/*start*/
+.s1{ grid-area: s1; }
+/*2-5*/
+.s2{ grid-area: s2; }
+.s3{ grid-area: s3; }
+.s4{ grid-area: s4; }
+.s5{ grid-area: s5; }
+/*6-10*/
+.s6{ grid-area: s6; }
+.s7{ grid-area: s7; }
+.s8{ grid-area: s8; }
+.s9{ grid-area: s9; }
+.s10{ grid-area: s10; }
+/*11-15*/
+.s11{ grid-area: s11; }
+.s12{ grid-area: s12; }
+.s13{ grid-area: s13; }
+.s14{ grid-area: s14; }
+.s15{ grid-area: s15; }
+/*16-20*/
+.s16{ grid-area: s16; }
+.s17{ grid-area: s17; }
+.s18{ grid-area: s18; }
+.s19{ grid-area: s19; }
+.s20{ grid-area: s20; }
+/*21-23*/
+.s21{ grid-area: s21; }
+.s22{ grid-area: s22; }
+.s23{ grid-area: s23; }
+.s24{ grid-area: s24; }
+
+.players{
+
+	display: flex;
+	justify-content: center;
+}
+
+#gameboard{
+	display: grid;
+	/*grid-template-columns: repeat (auto-fill, minmax(1fr, 1fr, 1fr, 1fr));*/
+/*	grid-template-columns: 1fr .5fr .5fr .5fr;*/
+/*	grid-template-rows: 1fr 1fr;*/
+/*	align-items: start;*/
+	grid-template-areas:
+	/*'s1 s1 s2 s3 s4 s5'
+	's1 s1 s9 s8 s7 s6'
+	's11 s10 s15 s16 s17 s18'
+	's12 s13 s14 s20 s19 s19'
+	's23 s22 s22 s21 s24 s24'
+	's23 s24 s24 s24 s24 s24'*/
+	's1 s2 s3 s4 s5 s6'
+	's12 s11 s10 s9 s8 s7'
+	's13 s14 s15 s16 s17 s18'
+	's24 s23 s22 s21 s20 s19'
+	;
+	background: #000000;
+	border: solid;
+	border-color: #000000;
+	grid-gap: 10px;
+	
+}
+
+.boardsquare{
+/*	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;*/
+}
+
+#s1div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+#s2div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+#s3div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+/*.s4{
+	display: grid;
+	align-items: end;
+}*/
+#s4div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+/*5-8*/
+
+#s5div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s6div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s7div{
+	height: 100px;
+	width: 100px;
+	background: #d3a625;
+	border: solid;
+	border-color: #740001;
+	color: black;
+}
+#s8div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+/*9-12*/
+#s9div{
+	height: 100px;
+	width: 100px;
+
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s10div{
+	height: 100px;
+	width: 100px;
+
+	/*background: #740001;*/
+	border: solid;
+	border-color: #d3a625;
+}
+#s11div{
+	height: 100px;
+	width: 100px;
+
+	background: #d3a625;
+	border: solid;
+	border-color: #740001;
+	color: black;
+
+}
+#s12div{
+	height: 100px;
+	width: 100px;
+	
+
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+/*13-16*/
+#s13div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s14div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s15div{
+	height: 100px;
+	width: 100px;
+	background: #d3a625;
+	border: solid;
+	border-color: #740001;
+	color: black;
+}
+#s16div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+
+/*17-20*/
+#s17div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s18div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s19div{
+	height: 100px;
+	width: 100px;
+	/*background: #740001;*/
+	border: solid;
+	border-color: #d3a625;
+}
+#s20div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+/*21-23*/
+
+#s21div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+#s22div{
+	height: 100px;
+	width: 100px;
+	background: #d3a625;
+	border: solid;
+	border-color: #740001;
+	color: black;
+}
+#s23div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
+
+
+/*Finish*/
+#s24div{
+	height: 100px;
+	width: 100px;
+	background: #740001;
+	border: solid;
+	border-color: #d3a625;
+}
