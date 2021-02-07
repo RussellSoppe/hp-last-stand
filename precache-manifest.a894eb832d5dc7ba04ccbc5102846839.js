@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/hp-last-stand/static/media/Hufflepuff_Crest.94cc1e4d.png"
   },
   {
-    "revision": "69011d170758e0ac542c",
-    "url": "/hp-last-stand/static/css/main.3ef17815.chunk.css"
+    "revision": "a96a2ccb5120f3550636",
+    "url": "/hp-last-stand/static/css/main.8d9f397f.chunk.css"
   },
   {
     "revision": "f181d4e8b62c2a91b6d3",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/hp-last-stand/static/media/Slytherin_Crest.6911b896.png"
   },
   {
-    "revision": "69011d170758e0ac542c",
-    "url": "/hp-last-stand/static/js/main.69011d17.chunk.js"
+    "revision": "a96a2ccb5120f3550636",
+    "url": "/hp-last-stand/static/js/main.a96a2ccb.chunk.js"
   },
   {
     "revision": "9da392cf1bc9de55de181a5c070f4d0f",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/hp-last-stand/static/media/Oswald-Medium.3e97dbdb.ttf"
   },
   {
-    "revision": "c95203745b7ccdfe97ba9f9120e0cc93",
+    "revision": "9780fa474bbb408c4667d336eb03e839",
     "url": "/hp-last-stand/index.html"
   }
 ];

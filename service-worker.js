@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/hp-last-stand/precache-manifest.9b74e3873eb09095c4d62aeaab3987a9.js"
+  "/hp-last-stand/precache-manifest.a894eb832d5dc7ba04ccbc5102846839.js"
 );
 
 workbox.clientsClaim();
