@@ -355,19 +355,22 @@ onStartNewGame = ()=>{
           </div>
         
           <div id="gamespace"> 
+
             <div>
               <div className="playerhud">
                 <div className="playernametext">{"Player 1"}<img className="playeravatarimg" src={this.state.player1avatar} alt="Player 1 Avatar" height="50px" length="50px"></img></div>
-                <button disabled={this.state.player!=="player1"} onClick={()=>this.onPlayerMove(this.state.player)}>Roll Dice</button>
-                 <div>Current Position:{this.state.player1}</div>
+                <button className={this.state.player==="player1" ? "rollbutton" : "disabled"} disabled={this.state.player!=="player1"} onClick={()=>this.onPlayerMove(this.state.player)}>Roll Dice</button>
+                <div>Current Position:{this.state.player1}</div>
                 <div className="playerdiceinfo">{`Player 1 Dice Number: ${this.state.player1dice}`}</div>
               </div> 
+
               <div className="playerhud">
                 <div className="playernametext2">{"Player 2"}<img className="playeravatarimg" src={this.state.player2avatar} alt="Player 2 Avatar" height="50px" length="50px"></img></div>
-                <button disabled={this.state.player!=="player2"} onClick={()=>this.onPlayerMove(this.state.player)}>Roll Dice</button>
-                 <div>Current Position: {this.state.player2}</div>
+                <button className={this.state.player==="player2" ? "rollbutton" : "disabled"} disabled={this.state.player!=="player2"} onClick={()=>this.onPlayerMove(this.state.player)}>Roll Dice</button>
+                <div>Current Position: {this.state.player2}</div>
                 <div className="playerdiceinfo">{`Player 2 Dice Number: ${this.state.player2dice}`}</div>
               </div>
+
             </div>
             <Gameboard 
               player={this.state.player}

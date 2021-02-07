@@ -28,11 +28,18 @@ button[disabled]{
   background-color: #8C8265;
   font-family: Staatliches;
   border: none;
- text-shadow: none;
+  text-shadow: none;
   border-radius: 4px;
   
 }
 
+.rollbutton:hover{
+  transform: scale(1.2);
+}
+
+.rollbutton:active{
+  background-color: white;
+}
 
 #maintitle{
   font-family: harrypotter;

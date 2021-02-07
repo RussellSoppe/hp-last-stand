@@ -41,6 +41,12 @@
 	justify-content: center;
 }
 
+#player1gp, 
+#player2gp{
+	position: relative;
+	z-index: 99;
+}
+
 #gameboard{
 	display: grid;
 	/*grid-template-columns: repeat (auto-fill, minmax(1fr, 1fr, 1fr, 1fr));*/
@@ -76,10 +82,14 @@
 
 .backSpace{
 	font-size: 20px;
+	/*position: absolute;*/
+	z-index: -8;
 }
 
 .loseTurn{
 	font-size: 20px;
+	/*position: absolute;*/
+	z-index: -8;
 }
 
 
