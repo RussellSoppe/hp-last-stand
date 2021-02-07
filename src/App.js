@@ -56,7 +56,7 @@ if(this.state.player==="player1"){
     // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
   } 
 
-  this.setState({player1position: this.state.player1 + value, player2dice: value});
+  this.setState({player2position: this.state.player2 + value, player2dice: value});
 }
 
 return(playermoveobject);
@@ -91,7 +91,7 @@ onLooseTurn = ()=>{
       window.alert("Player 1 Losses a Turn");
       console.log("Player 1 Losses a Turn", "Player 1 after this.setState", this.state.p1status);
       // set up as a switch instead I guess?
-    }else if ((this.state.player2===10||this.state.player2===19)&& this.state.p2status==="go"&&(this.state.player2position === 10||this.state.player21position === 19)){
+    }else if ((this.state.player2===10||this.state.player2===19)&& this.state.p2status==="go"&&(this.state.player2position === 10||this.state.player2position === 19)){
       this.setState({p2status: "nogo"});
       window.alert("Player 2 Losses a Turn");
       console.log("Player 2 Losses a Turn", "Player 2 after this.setState", this.state.p2status);
@@ -320,6 +320,8 @@ onPlayerLooseSpace = (currentnumber, negativenumber)=>{
       // console.log("No Current Player Here");
 
   }}, 1000);
+
+  console.log("player2", this.state.player2, "player2position", this.state.player2position, "currentnumber",currentnumber);
 }
 
 onStartNewGame = ()=>{
