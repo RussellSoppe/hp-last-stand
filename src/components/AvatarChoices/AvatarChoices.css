@@ -29,3 +29,11 @@ font-family: harrypotter;
 .avatarchoicebutton{
 	/*created space between buttons*/
 }
+
+.avatarchoicebutton:hover{
+  transform: scale(1.2);
+}
+
+.avatarchoicebutton:active{
+  background-color: white;
+}
