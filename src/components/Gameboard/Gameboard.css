@@ -74,6 +74,15 @@
 	border-color: #d3a625;*/
 }
 
+.backSpace{
+	font-size: 20px;
+}
+
+.loseTurn{
+	font-size: 20px;
+}
+
+
 #s1div{
 	height: 100px;
 	width: 100px;

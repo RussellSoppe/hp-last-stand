@@ -20,6 +20,8 @@ class App extends Component {
         player2: 1, 
         player1dice: 0, 
         player2dice: 0,
+        player1position:1, 
+        player2position:1, 
         gameover: false, 
         testvalue: "What?",
         player1avatar: griffindoravatar,
@@ -33,11 +35,31 @@ class App extends Component {
 
 onRollDice = () => {
 let value  = Math.floor(Math.random() * 4) +1;
-if(this.state.player==="player1"){ 
-  this.setState({player1dice: value});}else{
-  this.setState({player2dice: value});
+let movearray = [1];
+let playermoveobject = {movearray, value};
+
+if(this.state.player==="player1"){
+  
+  for(let i = 1; i <= value; i++){
+    let time = i + "000";
+    movearray.push(i);
+    // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
+  } 
+
+  this.setState({player1position: this.state.player1 + value, player1dice: value});
+
+  }else{
+
+  for(let i = 1; i <= value; i++){
+    let time = i + "000";
+    movearray.push(i);
+    // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
+  } 
+
+  this.setState({player1position: this.state.player1 + value, player2dice: value});
 }
-return(value);
+
+return(playermoveobject);
 }
 
 onBothLoseTurn = (value)=>{
@@ -64,12 +86,12 @@ onAvatarChange2 = (avatarchoice, avatarname)=>{
 
 onLooseTurn = ()=>{
 
-    if ((this.state.player1===10||this.state.player1===19) && this.state.p1status==="go"){
+    if ((this.state.player1===10 || this.state.player1 === 19) && this.state.p1status==="go" && (this.state.player1position === 10||this.state.player1position === 19)){
       this.setState({p1status: "nogo"});
       window.alert("Player 1 Losses a Turn");
       console.log("Player 1 Losses a Turn", "Player 1 after this.setState", this.state.p1status);
       // set up as a switch instead I guess?
-    }else if ((this.state.player2===10|this.state.player2===19) && this.state.p2status==="go"){
+    }else if ((this.state.player2===10||this.state.player2===19)&& this.state.p2status==="go"&&(this.state.player2position === 10||this.state.player21position === 19)){
       this.setState({p2status: "nogo"});
       window.alert("Player 2 Losses a Turn");
       console.log("Player 2 Losses a Turn", "Player 2 after this.setState", this.state.p2status);
@@ -87,27 +109,65 @@ onBothLoseTurn = ()=>{
 
 onPlayerMove= (input, currentnumber, negativenumber)=> {
   console.log("Player: ", this.state.player)
+  let playerroll = this.onRollDice();
+  let fulldelay = 1;
+
  switch (this.state.gameover===false){
 
  // Player 1
  // Case 1 is normal move with a status of go and used for second turn after other player loses a turn
   case this.state.player==="player1" && this.state.p1status==="go" && (this.state.p2status==="go"||this.state.p2status==="lose1"):
   console.log("Player 1 Case 1");
-    this.setState({
-      player1: this.state.player1+this.onRollDice(), 
+
+    // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
+    
+    for(let i = 1; i <= playerroll.value; i++){
+      let time = i + "000";
+
+      setTimeout(()=>{
+  
+        this.setState({
+          player1: this.state.player1+1, 
+        });
+        
+      }, time);
+      
+      fulldelay = time;
+    }
+
+    setTimeout(()=>{
+      this.setState({
       player: "player2", 
       currentplayer: "Player 2's Turn"
-    })
+    })}, fulldelay);
+
     console.log("p1 status: ", this.state.p1status, "p2 status: ",this.state.p2status, "player", this.state.player);
     break;
 
   // Case 2 is used when opposite player lost a turn and current player is using first turn of two
   case this.state.player==="player1" && this.state.p1status==="go" && this.state.p2status==="nogo":
   console.log("Player 1 Case 2");
-    this.setState({
-      player1: this.state.player1+this.onRollDice(), 
+    
+
+     for(let i = 1; i <= playerroll.value; i++){
+      let time = i + "000";
+
+      setTimeout(()=>{
+  
+        this.setState({
+          player1: this.state.player1+1, 
+        });
+        
+      }, time);
+      
+      fulldelay = time;
+    }
+
+    setTimeout(()=>{
+      this.setState({
       p2status: "lose1"
-    })
+    })}, fulldelay);
+
     
     console.log("p1 status: ", this.state.p1status, "p2 status: ",this.state.p2status, "player", this.state.player);
     break;
@@ -115,12 +175,28 @@ onPlayerMove= (input, currentnumber, negativenumber)=> {
   // Case 3 is used after player lost turn and is returning to having a turn
   case this.state.player==="player1" && this.state.p1status==="lose1":
   console.log("Player 1 Case 3");
-    this.setState({
-      player1:this.state.player1+this.onRollDice(),
+    
+    for(let i = 1; i <= playerroll.value; i++){
+      let time = i + "000";
+
+      setTimeout(()=>{
+  
+        this.setState({
+          player1: this.state.player1+1, 
+        });
+        
+      }, time);
+      
+      fulldelay = time;
+    }
+
+    setTimeout(()=>{
+      this.setState({
       player: "player2",
       currentplayer: "Player 2's Turn",
       p1status: "go"
-    })
+    })}, fulldelay);
+
     break;
 
   // if both lose turn
@@ -133,21 +209,53 @@ onPlayerMove= (input, currentnumber, negativenumber)=> {
  // Case 1 is normal move with a status of go and used for second turn after other player loses a turn
   case this.state.player==="player2" && this.state.p2status==="go" && (this.state.p1status==="go"||this.state.p1status==="lose1"):
     console.log("Player 2 Case 1");
-    this.setState({
-      player2: this.state.player2+this.onRollDice(), 
+
+    for(let i = 1; i <= playerroll.value; i++){
+      let time = i + "000";
+
+      setTimeout(()=>{
+  
+        this.setState({
+          player2: this.state.player2+1, 
+        });
+        
+      }, time);
+      
+      fulldelay = time;
+    }
+
+    setTimeout(()=>{
+      this.setState({
       player: "player1",
-      currentplayer: "Player 1's Turn"
-    })
+      currentplayer: "Player 1's Turn",
+    })}, fulldelay);
+
+
     console.log("p1 status: ", this.state.p1status, "p2 status: ",this.state.p2status, "player", this.state.player);
     break;
 
   // Case 2 is used when opposite player lost a turn and current player is using first turn of two
   case this.state.player==="player2" && this.state.p2status==="go" && this.state.p1status==="nogo":
   console.log("Player 2 Case 2");
-    this.setState({
-      player2: this.state.player2+this.onRollDice(), 
+    
+    for(let i = 1; i <= playerroll.value; i++){
+      let time = i + "000";
+
+      setTimeout(()=>{
+  
+        this.setState({
+          player2: this.state.player2+1, 
+        });
+        
+      }, time);
+      
+      fulldelay = time;
+    }
+
+    setTimeout(()=>{
+      this.setState({
       p1status: "lose1"
-    })
+    })}, fulldelay);
     
     console.log("p1 status: ", this.state.p1status, "p2 status: ",this.state.p2status, "player", this.state.player);
     break;
@@ -155,12 +263,28 @@ onPlayerMove= (input, currentnumber, negativenumber)=> {
   // Case 3 is used after player lost turn and is returning to having a turn
   case this.state.player==="player2" && this.state.p2status==="lose1":
   console.log("Player 2 Case 3");
-    this.setState({
-      player2:this.state.player2+this.onRollDice(),
+
+    for(let i = 1; i <= playerroll.value; i++){
+      let time = i + "000";
+
+      setTimeout(()=>{
+  
+        this.setState({
+          player2: this.state.player2+1, 
+        });
+        
+      }, time);
+      
+      fulldelay = time;
+    }
+
+    setTimeout(()=>{
+      this.setState({
       player: "player1",
       currentplayer: "Player 1's Turn",
-      p2status: "go"
-    })
+      p1status: "go"
+    })}, fulldelay);
+
     break;
 
   default:
@@ -169,20 +293,27 @@ onPlayerMove= (input, currentnumber, negativenumber)=> {
 }
 
 onPlayerLooseSpace = (currentnumber, negativenumber)=>{
+
   setTimeout(()=>{
 
   switch (this.state.gameover===false){
 
-    case this.state.player1===currentnumber:
+    case this.state.player1===currentnumber && this.state.player1position === currentnumber:
       window.alert(`You landed on ${currentnumber}, go back ${negativenumber} spaces`);
       // console.log(`${this.state.player1} Number BEFORE negative number(${negativenumber}): ${this.state.player1}`)
-      this.setState({player1: this.state.player1-negativenumber})
+      this.setState({
+        player1: this.state.player1-negativenumber,
+        player1position: this.state.player1-negativenumber
+      })
       // console.log(`${this.state.player1} Number AFTER negative number(${negativenumber}): ${this.state.player1}`)
       break;
-    case this.state.player2===currentnumber:
+    case this.state.player2===currentnumber && this.state.player2position === currentnumber:
       window.alert(`You landed on ${currentnumber}, go back ${negativenumber} spaces`);
       // console.log(`${this.state.player2} Number BEFORE negative number(${negativenumber}): ${this.state.player2}`)
-      this.setState({player2: this.state.player2-negativenumber})
+      this.setState({
+        player2: this.state.player2-negativenumber,
+        player2position: this.state.player2-negativenumber
+      })
       // console.log(`${this.state.player2} Number AFTER negative number(${negativenumber}): ${this.state.player2}`)
       break;
     default:
