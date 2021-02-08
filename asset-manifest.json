@@ -1,13 +1,13 @@
 {
   "main.css": "/hp-last-stand/static/css/main.3b398781.chunk.css",
-  "main.js": "/hp-last-stand/static/js/main.a0ef70f6.chunk.js",
-  "main.js.map": "/hp-last-stand/static/js/main.a0ef70f6.chunk.js.map",
+  "main.js": "/hp-last-stand/static/js/main.d00eb0e2.chunk.js",
+  "main.js.map": "/hp-last-stand/static/js/main.d00eb0e2.chunk.js.map",
   "runtime~main.js": "/hp-last-stand/static/js/runtime~main.f181d4e8.js",
   "runtime~main.js.map": "/hp-last-stand/static/js/runtime~main.f181d4e8.js.map",
-  "static/js/2.4de7660a.chunk.js": "/hp-last-stand/static/js/2.4de7660a.chunk.js",
-  "static/js/2.4de7660a.chunk.js.map": "/hp-last-stand/static/js/2.4de7660a.chunk.js.map",
+  "static/js/2.d5bb88de.chunk.js": "/hp-last-stand/static/js/2.d5bb88de.chunk.js",
+  "static/js/2.d5bb88de.chunk.js.map": "/hp-last-stand/static/js/2.d5bb88de.chunk.js.map",
   "index.html": "/hp-last-stand/index.html",
-  "precache-manifest.e170e62d29ec30fb5232e0114235314d.js": "/hp-last-stand/precache-manifest.e170e62d29ec30fb5232e0114235314d.js",
+  "precache-manifest.2920d84991cae5a24e71180cdb48ba4c.js": "/hp-last-stand/precache-manifest.2920d84991cae5a24e71180cdb48ba4c.js",
   "service-worker.js": "/hp-last-stand/service-worker.js",
   "static/css/main.3b398781.chunk.css.map": "/hp-last-stand/static/css/main.3b398781.chunk.css.map",
   "static/media/Gryffindorcrest.png": "/hp-last-stand/static/media/Gryffindorcrest.7b120b3c.png",
@@ -16,6 +16,8 @@
   "static/media/MysteriousLights.mp3": "/hp-last-stand/static/media/MysteriousLights.31db2226.mp3",
   "static/media/Ravenclaw_Crest.png": "/hp-last-stand/static/media/Ravenclaw_Crest.9da392cf.png",
   "static/media/Slytherin_Crest.png": "/hp-last-stand/static/media/Slytherin_Crest.6911b896.png",
+  "static/media/ascendio.mp3": "/hp-last-stand/static/media/ascendio.ce8bac8c.mp3",
   "static/media/avadakedavra.mp3": "/hp-last-stand/static/media/avadakedavra.8f48927f.mp3",
+  "static/media/brilliant.mp3": "/hp-last-stand/static/media/brilliant.ab73dfb3.mp3",
   "static/media/hponbroom.png": "/hp-last-stand/static/media/hponbroom.0b9c30c1.png"
 }

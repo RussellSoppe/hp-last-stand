@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "a0ef70f69c8be379b31d",
+    "revision": "d00eb0e28b3cc377e822",
     "url": "/hp-last-stand/static/css/main.3b398781.chunk.css"
   },
   {
-    "revision": "a0ef70f69c8be379b31d",
-    "url": "/hp-last-stand/static/js/main.a0ef70f6.chunk.js"
+    "revision": "d00eb0e28b3cc377e822",
+    "url": "/hp-last-stand/static/js/main.d00eb0e2.chunk.js"
   },
   {
     "revision": "f181d4e8b62c2a91b6d3",
     "url": "/hp-last-stand/static/js/runtime~main.f181d4e8.js"
   },
   {
-    "revision": "4de7660a630496297be4",
-    "url": "/hp-last-stand/static/js/2.4de7660a.chunk.js"
+    "revision": "d5bb88ded6d25303785a",
+    "url": "/hp-last-stand/static/js/2.d5bb88de.chunk.js"
   },
   {
     "revision": "7b120b3cbe66c93e50ff78388d3f227e",
@@ -44,6 +44,14 @@ self.__precacheManifest = [
     "url": "/hp-last-stand/static/media/avadakedavra.8f48927f.mp3"
   },
   {
+    "revision": "ce8bac8c12f33ac26e222640a8af868e",
+    "url": "/hp-last-stand/static/media/ascendio.ce8bac8c.mp3"
+  },
+  {
+    "revision": "ab73dfb396cf3720088e5140756f84d6",
+    "url": "/hp-last-stand/static/media/brilliant.ab73dfb3.mp3"
+  },
+  {
     "revision": "181ef9a7aee45c119e68f294e8426a3a",
     "url": "/hp-last-stand/static/media/HARRYP__.181ef9a7.TTF"
   },
@@ -52,7 +60,7 @@ self.__precacheManifest = [
     "url": "/hp-last-stand/static/media/Oswald-Medium.3e97dbdb.ttf"
   },
   {
-    "revision": "44104444f8568ac33aef5dd6e7b7113a",
+    "revision": "d8e973b18b1d7cbccb0d924011d5988c",
     "url": "/hp-last-stand/index.html"
   }
 ];
