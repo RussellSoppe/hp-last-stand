@@ -8,6 +8,8 @@ import griffindoravatar from './imgs/Gryffindorcrest.png';
 import slytherinavatar from './imgs/Slytherin_Crest.png';
 import backgroundaudio from './audio/MysteriousLights.mp3';
 import avadaaudio from './audio/avadakedavra.mp3';
+import ascendioaudio from './audio/ascendio.mp3';
+import brilliantaudio from './audio/brilliant.mp3';
 
 class App extends Component {
 
@@ -42,10 +44,22 @@ componentDidMount(){
 
 }
 
-playAvada = () => {
+playAvadaAudio = () => {
  const avada = document.getElementById("avada");
  avada.volume = 1;
  avada.play();
+}
+
+playBrilliantAudio = ()=>{
+  const brilliant = document.getElementById("brilliant");
+  brilliant.volume = 1;
+  brilliant.play();
+}
+
+playAscendioAudio = ()=>{
+  const ascendio = document.getElementById("ascendio");
+  ascendio.volume = 1;
+  ascendio.play();
 }
 
 onRollDice = () => {
@@ -77,16 +91,6 @@ onRollDice = () => {
   return(playermoveobject);
 }
 
-onBothLoseTurn = (value)=>{
-  setTimeout (()=>{
-    if (this.state.player1===value && this.state.player2===value){
-    console.warn("ON BOTH LOOSE TURN WORKING???????????????????????????????????????");
-    }
-
-  }, 2000);
-}
-
-
 onAvatarChange1 = (avatarchoice, avatarname)=>{
   window.confirm(`Player 1, are you sure you want to pick ${avatarname}?`);
   this.setState({player1avatar: avatarchoice, avatar1choice: true, avatar1: avatarname})
@@ -97,32 +101,43 @@ onAvatarChange2 = (avatarchoice, avatarname)=>{
   this.setState({player2avatar: avatarchoice, avatar2choice: true, avatar2: avatarname})
 }
 
-
 onLooseTurn = ()=>{
 
     if ((this.state.player1===10 || this.state.player1 === 19) && this.state.p1status==="go" && (this.state.player1position === 10||this.state.player1position === 19)){
       this.setState({p1status: "nogo"});
-      this.playAvada();
+      this.playAvadaAudio();
       window.alert("Player 1 Losses a Turn");
       console.log("Player 1 Losses a Turn", "Player 1 after this.setState", this.state.p1status);
       // set up as a switch instead I guess?
       
     }else if ((this.state.player2===10||this.state.player2===19)&& this.state.p2status==="go"&&(this.state.player2position === 10||this.state.player2position === 19)){
       this.setState({p2status: "nogo"});
-      this.playAvada();
+      this.playAvadaAudio();
       window.alert("Player 2 Losses a Turn");
       console.log("Player 2 Losses a Turn", "Player 2 after this.setState", this.state.p2status);
     }
-
-  }
+}
 
 onBothLoseTurn = ()=>{
   if (this.state.p1status==="lose1" && this.state.p2status==="nogo"){
+
     this.setState({p1status:"go", p2status: "lose1", player:"player1"})
+
   }else if (this.state.p2status==="lose1" && this.state.p1status==="nogo"){
+
     this.setState({p2status:"go", p1status: "lose1", player:"player2"})
+
   }
 }
+
+// onBothLoseTurn = (value)=>{
+//   setTimeout (()=>{
+//     if (this.state.player1===value && this.state.player2===value){
+//     console.warn("ON BOTH LOOSE TURN WORKING???????????????????????????????????????");
+//     }
+
+//   }, 2000);
+// }
 
 onPlayerMove= (input, currentnumber, negativenumber)=> {
   console.log("Player: ", this.state.player)
@@ -316,6 +331,7 @@ onPlayerLooseSpace = (currentnumber, negativenumber)=>{
   switch (this.state.gameover===false){
 
     case this.state.player1===currentnumber && this.state.player1position === currentnumber:
+      this.playAscendioAudio();
       window.alert(`Player 1 landed on ${currentnumber}, go back ${negativenumber} spaces`);
       // console.log(`${this.state.player1} Number BEFORE negative number(${negativenumber}): ${this.state.player1}`)
       this.setState({
@@ -325,6 +341,7 @@ onPlayerLooseSpace = (currentnumber, negativenumber)=>{
       // console.log(`${this.state.player1} Number AFTER negative number(${negativenumber}): ${this.state.player1}`)
       break;
     case this.state.player2===currentnumber && this.state.player2position === currentnumber:
+      this.playAscendioAudio();
       window.alert(`Player 2 landed on ${currentnumber}, go back ${negativenumber} spaces`);
       // console.log(`${this.state.player2} Number BEFORE negative number(${negativenumber}): ${this.state.player2}`)
       this.setState({
@@ -369,6 +386,9 @@ onStartNewGame = ()=>{
           <source src={backgroundaudio}></source>
         </audio>
         <audio id="avada" src={avadaaudio}></audio>
+        <audio id="brilliant" src={brilliantaudio}></audio>
+        <audio id="ascendio" src={ascendioaudio}></audio>
+
         <header className="App-header">
           <div id="maintitle">
             <img src={hponbroom} className="App-logo" alt="Harry Potter on a broom holding his wand." width="auto" height="auto"/>
@@ -403,6 +423,7 @@ onStartNewGame = ()=>{
               player2avatar = {this.state.player2avatar}
               onStartNewGame = {this.onStartNewGame}
               onBothLoseTurn = {this.onBothLoseTurn}
+              playBrilliantAudio = {this.playBrilliantAudio}
             />
             <AvatarChoices
              onAvatarChange1 = {this.onAvatarChange1}

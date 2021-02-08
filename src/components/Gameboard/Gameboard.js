@@ -1,15 +1,30 @@
 import React from 'react';
 import './Gameboard.css'
 
-const Gameboard = ({player, player1, player2, onPlayerLooseSpace, onLooseTurn, player1avatar, player2avatar, onStartNewGame, onBothLoseTurn})=>{
+const Gameboard = ({player, player1, player2, onPlayerLooseSpace, onLooseTurn, player1avatar, player2avatar, onStartNewGame, onBothLoseTurn, playBrilliantAudio})=>{
 
 
 const position1 = (value)=>{if (player1===value){return(<div id="player1gp"><img onLoad={onLooseTurn} src={player1avatar} alt="Player 1 Avatar" height="50px" length="50px"></img></div>);}}
 const position2 = (value)=>{if (player2===value){return(<div id="player2gp"><img onLoad={onLooseTurn} src={player2avatar} alt="Player 1 Avatar" height="50px" length="50px"></img></div>);}}
 
-const playerName = ()=>{if (player==="player1"){return(<div>Player 1's Turn</div>);} else {return(<div>Player 2's Turn</div>);}}
+const playerName = ()=>{if (player==="player1"){return(<div>Player 1's Turn </div>);} else {return(<div>Player 2's Turn</div>);}}
 
-const gameover = (value) =>{if (player1>=value||player2>=value){return(<div><div>Game Over</div><button onClick={onStartNewGame}>Start New Game</button></div>);}}
+const gameover = (value) => {
+
+	if (player1>=value||player2>=value){
+
+		playBrilliantAudio();
+
+		return(
+			<div>
+				<div>Game Over</div>
+				<button onClick={()=>onStartNewGame()}>
+					Start New Game
+				</button>
+			</div>
+		);
+	}
+}
 	
 	return(
 
