@@ -34,32 +34,32 @@ class App extends Component {
   }
 
 onRollDice = () => {
-let value  = Math.floor(Math.random() * 4) +1;
-let movearray = [1];
-let playermoveobject = {movearray, value};
+  let value  = Math.floor(Math.random() * 4) +1;
+  let movearray = [1];
+  let playermoveobject = {movearray, value};
 
-if(this.state.player==="player1"){
-  
-  for(let i = 1; i <= value; i++){
-    let time = i + "000";
-    movearray.push(i);
-    // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
-  } 
+  if(this.state.player==="player1"){
+    
+    for(let i = 1; i <= value; i++){
+      let time = i + "000";
+      movearray.push(i);
+      // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
+    } 
 
-  this.setState({player1position: this.state.player1 + value, player1dice: value});
+    this.setState({player1position: this.state.player1 + value, player1dice: value});
 
-  }else{
+    }else{
 
-  for(let i = 1; i <= value; i++){
-    let time = i + "000";
-    movearray.push(i);
-    // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
-  } 
+    for(let i = 1; i <= value; i++){
+      let time = i + "000";
+      movearray.push(i);
+      // setTimeout(()=>{console.log("Move Array", movearray[i])}, time);
+    } 
 
-  this.setState({player2position: this.state.player2 + value, player2dice: value});
-}
+    this.setState({player2position: this.state.player2 + value, player2dice: value});
+  }
 
-return(playermoveobject);
+  return(playermoveobject);
 }
 
 onBothLoseTurn = (value)=>{
@@ -69,7 +69,6 @@ onBothLoseTurn = (value)=>{
     }
 
   }, 2000);
-  
 }
 
 
@@ -299,7 +298,7 @@ onPlayerLooseSpace = (currentnumber, negativenumber)=>{
   switch (this.state.gameover===false){
 
     case this.state.player1===currentnumber && this.state.player1position === currentnumber:
-      window.alert(`You landed on ${currentnumber}, go back ${negativenumber} spaces`);
+      window.alert(`Player 1 landed on ${currentnumber}, go back ${negativenumber} spaces`);
       // console.log(`${this.state.player1} Number BEFORE negative number(${negativenumber}): ${this.state.player1}`)
       this.setState({
         player1: this.state.player1-negativenumber,
@@ -308,7 +307,7 @@ onPlayerLooseSpace = (currentnumber, negativenumber)=>{
       // console.log(`${this.state.player1} Number AFTER negative number(${negativenumber}): ${this.state.player1}`)
       break;
     case this.state.player2===currentnumber && this.state.player2position === currentnumber:
-      window.alert(`You landed on ${currentnumber}, go back ${negativenumber} spaces`);
+      window.alert(`Player 2 landed on ${currentnumber}, go back ${negativenumber} spaces`);
       // console.log(`${this.state.player2} Number BEFORE negative number(${negativenumber}): ${this.state.player2}`)
       this.setState({
         player2: this.state.player2-negativenumber,
