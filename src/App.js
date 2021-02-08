@@ -6,6 +6,8 @@ import AvatarChoices from './components/AvatarChoices/AvatarChoices.js';
 import hponbroom from './imgs/hponbroom.png';
 import griffindoravatar from './imgs/Gryffindorcrest.png';
 import slytherinavatar from './imgs/Slytherin_Crest.png';
+import backgroundaudio from './audio/MysteriousLights.mp3';
+import avadaaudio from './audio/avadakedavra.mp3';
 
 class App extends Component {
 
@@ -32,6 +34,19 @@ class App extends Component {
         avatar2: ""
     }
   }
+
+componentDidMount(){
+
+  const backgroundaudioloop = document.getElementsByClassName("backgroundloop")[0];
+  backgroundaudioloop.volume = 0.01;
+
+}
+
+playAvada = () => {
+ const avada = document.getElementById("avada");
+ avada.volume = 1;
+ avada.play();
+}
 
 onRollDice = () => {
   let value  = Math.floor(Math.random() * 4) +1;
@@ -87,11 +102,14 @@ onLooseTurn = ()=>{
 
     if ((this.state.player1===10 || this.state.player1 === 19) && this.state.p1status==="go" && (this.state.player1position === 10||this.state.player1position === 19)){
       this.setState({p1status: "nogo"});
+      this.playAvada();
       window.alert("Player 1 Losses a Turn");
       console.log("Player 1 Losses a Turn", "Player 1 after this.setState", this.state.p1status);
       // set up as a switch instead I guess?
+      
     }else if ((this.state.player2===10||this.state.player2===19)&& this.state.p2status==="go"&&(this.state.player2position === 10||this.state.player2position === 19)){
       this.setState({p2status: "nogo"});
+      this.playAvada();
       window.alert("Player 2 Losses a Turn");
       console.log("Player 2 Losses a Turn", "Player 2 after this.setState", this.state.p2status);
     }
@@ -347,6 +365,10 @@ onStartNewGame = ()=>{
   render() {
     return (
       <div className="App">
+        <audio className="backgroundloop" autoPlay loop>
+          <source src={backgroundaudio}></source>
+        </audio>
+        <audio id="avada" src={avadaaudio}></audio>
         <header className="App-header">
           <div id="maintitle">
             <img src={hponbroom} className="App-logo" alt="Harry Potter on a broom holding his wand." width="auto" height="auto"/>
