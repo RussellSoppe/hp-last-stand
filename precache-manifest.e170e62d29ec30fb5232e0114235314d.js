@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "6f0f1ed00fb325c8bbe2",
+    "revision": "a0ef70f69c8be379b31d",
     "url": "/hp-last-stand/static/css/main.3b398781.chunk.css"
   },
   {
-    "revision": "6f0f1ed00fb325c8bbe2",
-    "url": "/hp-last-stand/static/js/main.6f0f1ed0.chunk.js"
+    "revision": "a0ef70f69c8be379b31d",
+    "url": "/hp-last-stand/static/js/main.a0ef70f6.chunk.js"
   },
   {
     "revision": "f181d4e8b62c2a91b6d3",
     "url": "/hp-last-stand/static/js/runtime~main.f181d4e8.js"
   },
   {
-    "revision": "9931cdce83b566ddcf5c",
-    "url": "/hp-last-stand/static/js/2.9931cdce.chunk.js"
+    "revision": "4de7660a630496297be4",
+    "url": "/hp-last-stand/static/js/2.4de7660a.chunk.js"
   },
   {
     "revision": "7b120b3cbe66c93e50ff78388d3f227e",
@@ -36,6 +36,14 @@ self.__precacheManifest = [
     "url": "/hp-last-stand/static/media/hponbroom.0b9c30c1.png"
   },
   {
+    "revision": "31db2226a529cdcf10853bcca8f4a6f6",
+    "url": "/hp-last-stand/static/media/MysteriousLights.31db2226.mp3"
+  },
+  {
+    "revision": "8f48927f355d963049d9c3f0d02d62d7",
+    "url": "/hp-last-stand/static/media/avadakedavra.8f48927f.mp3"
+  },
+  {
     "revision": "181ef9a7aee45c119e68f294e8426a3a",
     "url": "/hp-last-stand/static/media/HARRYP__.181ef9a7.TTF"
   },
@@ -44,7 +52,7 @@ self.__precacheManifest = [
     "url": "/hp-last-stand/static/media/Oswald-Medium.3e97dbdb.ttf"
   },
   {
-    "revision": "aa42f0e4dd1d8f491ea48bbd6586d029",
+    "revision": "44104444f8568ac33aef5dd6e7b7113a",
     "url": "/hp-last-stand/index.html"
   }
 ];
